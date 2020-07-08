@@ -27,3 +27,5 @@ sekiro远程服务获取js加密
     服务器的话需要开放相应的端口
     改客户端html的文件：ws://192.168.31.190:5603/websocket?
     改py文件：http://192.168.31.190:5602/invoke
+    
+如果https的网站不破破解，就使用原来的sekiro-server，走wss
