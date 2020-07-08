@@ -15,7 +15,7 @@
         }
 
         var client = new SekiroClient("wss://sekiro.virjar.com/websocket?group=ws-group-nieyaoban&clientId=" + guid());
-        
+
         client.registerAction("base64_encode", function (request, resolve, reject) {
             resolve(base64_encode(request['encode_str']));
         });
@@ -23,9 +23,9 @@
 
         client.registerAction("base64_decode", function (request, resolve, reject) {
             resolve(base64_decode(request['decode_str']));
-        });    
+        });
 
-        
+
 
         client.registerAction("executeJs", function (request, resolve, reject) {
             var code = request['code'];

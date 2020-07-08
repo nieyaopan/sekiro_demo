@@ -20,3 +20,5 @@ sekiro远程服务获取js加密
 	6：调用的时候：demo.py改group	
 	action：你在html中注册的方法名
 	encode_str：你的参数名以及你传入的参数
+	
+自己开服务的话 是 用docker拉下来registry.cn-beijing.aliyuncs.com/virjar/sekiro-server:latest这个 然后起一下就好了嘛
