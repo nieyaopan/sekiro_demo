@@ -3,7 +3,7 @@ sekiro远程服务获取js加密
 
 
 原理：
-	相当于部署一个jsrpc服务，在一台机器上开一个浏览器，注入你的加密代码，远程py访问接口，由浏览器去执行js代码，获取数据
+	相当于部署一个jsrpc服务，在linux开一个sekiro-server服务端，在一台机器上开一个浏览器，注入你的加密代码，远程py访问接口，由浏览器去执行js代码，获取数据
 
 实际使用
 	1：首先把你需要的js代码抠出来，改造成一个返回结果的方法，相当于base64.JS文件
@@ -21,4 +21,9 @@ sekiro远程服务获取js加密
 	action：你在html中注册的方法名
 	encode_str：你的参数名以及你传入的参数
 	
-自己开服务的话 是 用docker拉下来registry.cn-beijing.aliyuncs.com/virjar/sekiro-server:latest这个 然后起一下就好了嘛
+自己开sekiro服务端
+    拉docker镜像：docker pull registry.cn-beijing.aliyuncs.com/virjar/sekiro-server:latest
+    启动容器：docker run -d -p 5600:5600 -p 5601:5601 -p 5602:5602 -p 5603:5603 registry.cn-beijing.aliyuncs.com/virjar/sekiro-server
+    服务器的话需要开放相应的端口
+    改客户端html的文件：ws://192.168.31.190:5603/websocket?
+    改py文件：http://192.168.31.190:5602/invoke
